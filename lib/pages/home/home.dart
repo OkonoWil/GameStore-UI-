@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gamestore_test_ui/pages/home/widgets/header.dart';
 import 'package:gamestore_test_ui/pages/home/widgets/search.dart';
+import 'package:gamestore_test_ui/pages/home/widgets/category.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -26,23 +27,24 @@ class HomePage extends StatelessWidget {
                   child: Image.asset('assets/images/bg_liquid.png', width: 200,)
                 ) 
               ),
-              const Column(
+              Column(
                 children: [
-                  HeaderSection(),
-                  SearchSection()
+                  const HeaderSection(),
+                  const SearchSection(),
+                  CategorySection()
                 ],
               )
             ],
           )),
-        bottomNavigationBar: NavigationBar(),
+        bottomNavigationBar: navigationBar(),
       );
   }
 }
 
-Widget NavigationBar(){
+Widget navigationBar(){
   return Container(
     decoration: BoxDecoration(
-      // color: Colors.white,
+      color: Color.fromARGB(255, 240, 241, 241),
       boxShadow: [
         BoxShadow(
           color: Colors.grey.withOpacity(0.2),
@@ -52,13 +54,12 @@ Widget NavigationBar(){
         ),
       ]
     ),
-    child: Container(
-      child: ClipRRect(
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30)
-        ),
-        child: BottomNavigationBar(
+    child: ClipRRect(
+      borderRadius: const BorderRadius.only(
+        topLeft: Radius.circular(30),
+        topRight: Radius.circular(30)
+      ),
+      child: BottomNavigationBar(
           selectedItemColor: const Color(0xFF5F67EA),
           selectedFontSize: 12,
           unselectedFontSize: 12,
@@ -84,7 +85,7 @@ Widget NavigationBar(){
           ],
           currentIndex: 0,
         ),
-      ),
+      
     ),
   );  
 }
