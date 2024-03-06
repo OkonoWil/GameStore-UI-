@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gamestore_test_ui/pages/home/widgets/newest.dart';
 import 'package:gamestore_test_ui/pages/home/widgets/popular.dart';
 
 class CategorySection extends StatelessWidget {
@@ -9,6 +10,11 @@ class CategorySection extends StatelessWidget {
       'icon': Icons.track_changes_outlined,
       'color': const Color(0xFF605CF4),
       'title': 'Arcabe'
+    },
+    {
+      'icon': Icons.spoke_rounded,
+      'color': const Color(0xFF605CF4),
+      'title': 'Football'
     },
     {
       'icon': Icons.sports_motorsports_outlined,
@@ -90,6 +96,7 @@ class CategorySection extends StatelessWidget {
               fontWeight: FontWeight.bold
             ),),
         ),
+        NewestSection(),
       ],),
     );
   }
