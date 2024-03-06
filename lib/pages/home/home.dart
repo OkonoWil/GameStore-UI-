@@ -32,6 +32,7 @@ class HomePage extends StatelessWidget {
                   const HeaderSection(),
                   const SearchSection(),
                   CategorySection()
+                  
                 ],
               )
             ],
